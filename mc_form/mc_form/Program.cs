@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using com.TheDisappointedProgrammer.IOCC;
 
 namespace mc_form
 {
@@ -15,7 +16,8 @@ namespace mc_form
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form1 form1 = new SimpleIOCContainer().CreateAndInjectDependencies<Form1>();
+            Application.Run(form1);
         }
     }
 }

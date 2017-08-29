@@ -7,11 +7,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using com.TheDisappointedProgrammer.IOCC;
 using Word = Microsoft.Office.Interop.Word;
 using mc_auto;
 
 namespace mc_form
 {
+    [Bean]
     public partial class Form1 : Form
     {
         //private string INPUT_FILE_NAME = "mvn_howto.doc";
@@ -19,6 +21,8 @@ namespace mc_form
         //private string INPUT_FILE_NAME = "mvn_commentary.doc";
         private string OUTPUT_FILE_EXTENSION = "xml";
         private const string EL_DOC = "doc";
+        [BeanReference]
+        private SimpleIOCContainer iocc;
 
         public Form1()
         {
